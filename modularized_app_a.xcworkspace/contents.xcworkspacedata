@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:modularized_module_a/modularized_module_a.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:modularized_app_a.xcodeproj">
    </FileRef>
    <FileRef

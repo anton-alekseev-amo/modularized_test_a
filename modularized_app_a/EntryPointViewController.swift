@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import modularized_module_a
 
 class EntryPointViewController: UIViewController {
     
