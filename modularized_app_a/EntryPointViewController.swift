@@ -18,11 +18,11 @@ class EntryPointViewController: UIViewController {
     let moduleBButton = UIButton()
     
     let moduleAItems: [SharedDisplayItem] = (1...7).map {
-        SharedDisplayItem(title: "Item \($0)", subtitle: "Nice \($0)")
+        SharedDisplayItem(title: "Item \($0)")
     }
     
     let moduleBItems: [SharedDisplayItem] = (1...10).map {
-        SharedDisplayItem(title: "Item \($0)")
+        SharedDisplayItem(title: "Item \($0)", subtitle: "Nice \($0)")
     }
     
     var selectedAItemID: UUID?
