@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class EntryPointViewController: UIViewController {
     
@@ -46,14 +47,13 @@ class EntryPointViewController: UIViewController {
         moduleAButton.addTarget(self, action: #selector(moduleATap), for: .touchUpInside)
         
         view.addSubview(moduleAButton)
-        moduleAButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            moduleAButton.heightAnchor.constraint(equalToConstant: 80),
-            moduleAButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            moduleAButton.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
-            moduleAButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
-            moduleAButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
-        ])
+        moduleAButton.snp.makeConstraints { make in
+            make.height.equalTo(80)
+            make.centerX.equalTo(view.snp.centerX)
+            make.bottom.equalTo(view.snp.centerY).offset(-20)
+            make.left.equalTo(view.snp.left).inset(40)
+            make.right.equalTo(view.snp.right).inset(40)
+        }
     }
     
     func configureModuleBButton() {
@@ -62,14 +62,13 @@ class EntryPointViewController: UIViewController {
         moduleBButton.addTarget(self, action: #selector(moduleBTap), for: .touchUpInside)
         
         view.addSubview(moduleBButton)
-        moduleBButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            moduleBButton.heightAnchor.constraint(equalToConstant: 80),
-            moduleBButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            moduleBButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 40),
-            moduleBButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
-            moduleBButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
-        ])
+        moduleBButton.snp.makeConstraints { make in
+            make.height.equalTo(80)
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(view.snp.centerY).offset(20)
+            make.left.equalTo(view.snp.left).inset(40)
+            make.right.equalTo(view.snp.right).inset(40)
+        }
     }
     
     @objc
