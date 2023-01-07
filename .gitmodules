@@ -4,3 +4,6 @@
 [submodule "modularized_module_b"]
 	path = modularized_module_b
 	url = git@github.com:anton-alekseev-amo/modularized_test_module_b.git
+[submodule "modularized_shared_module"]
+	path = modularized_shared_module
+	url = git@github.com:anton-alekseev-amo/modularized_shared_module.git

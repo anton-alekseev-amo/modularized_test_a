@@ -11,6 +11,9 @@
       location = "group:modularized_module_b/modularized_module_b.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:modularized_shared_module/modularized_shared_module.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
