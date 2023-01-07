@@ -24,6 +24,11 @@ target 'modularized_module_b' do
   snapKitPod
 end
 
+target 'modularized_shared_module' do
+  project 'modularized_shared_module/modularized_shared_module.project'
+  snapKitPod
+end
+
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

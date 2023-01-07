@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import modularized_module_a
 import modularized_module_b
+import modularized_shared_module
 
 class EntryPointViewController: UIViewController {
     
@@ -16,12 +17,12 @@ class EntryPointViewController: UIViewController {
     let moduleAButton = UIButton()
     let moduleBButton = UIButton()
     
-    let moduleAItems: [ModuleAViewController.DisplayItem] = (1...7).map {
-        ModuleAViewController.DisplayItem(title: "Item \($0)")
+    let moduleAItems: [SharedDisplayItem] = (1...7).map {
+        SharedDisplayItem(title: "Item \($0)", subtitle: "Nice \($0)")
     }
     
-    let moduleBItems: [ModuleBViewController.DisplayItem] = (1...10).map {
-        ModuleBViewController.DisplayItem(title: "Item \($0)", subtitle: "Nice \($0)")
+    let moduleBItems: [SharedDisplayItem] = (1...10).map {
+        SharedDisplayItem(title: "Item \($0)")
     }
     
     var selectedAItemID: UUID?
@@ -95,7 +96,7 @@ extension EntryPointViewController: ModuleAViewControllerDelegate {
 }
 
 extension EntryPointViewController: ModuleBViewControllerDelegate {
-    func moduleBDidSelectItem(with ID: UUID) {
+    func moduleBDidSelectItem(with ID: SharedDisplayItemIdentifier) {
         self.selectedBItemID = ID
     }
 }
