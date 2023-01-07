@@ -1,3 +1,6 @@
 [submodule "modularized_module_a"]
 	path = modularized_module_a
 	url = git@github.com:anton-alekseev-amo/modularized_test_module_a.git
+[submodule "modularized_module_b"]
+	path = modularized_module_b
+	url = git@github.com:anton-alekseev-amo/modularized_test_module_b.git

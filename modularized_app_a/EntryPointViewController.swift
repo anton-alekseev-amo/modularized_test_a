@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import modularized_module_a
+import modularized_module_b
 
 class EntryPointViewController: UIViewController {
     
