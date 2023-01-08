@@ -4,16 +4,27 @@ This is a test project created for the modularization test purposes. The app str
 App Structure
 ---
 ```mermaid
-%%{ init: { 'flowchart': { 'curve': 'natural' } } }%%
 graph BT
 subgraph  App Workspace
-A[App Module] --> B[Module A]
-A --> C[Module B]
-subgraph Module with Nested Modules
-C --> C1[Module B Additional module]
+	A[App Module]
+	subgraph  Internal Dependencies
+		B[Module A]
+		C[Module B]
+		subgraph Module with Nested Modules
+			C1[Module B Additional module]
+		end
+		D(Shared Module)
+	end
+	subgraph External Dependencies
+		E{{3rd party dependencies Module}}
+		F((pod 1))
+		G((pod 2))
+		H((pod n))
+	end
 end
-A & B & C --> D(Shared Module)
-A & B & C --> E{PODS Module}
-E --> F((pod 1)) & G((pod 2)) & H((pod n))
-end
+A --> B & C
+C --> C1
+A & B & C --> D
+A & B & C --> E
+E --> F & G & H
 ```
