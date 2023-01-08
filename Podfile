@@ -24,6 +24,11 @@ target 'modularized_module_b' do
   snapKitPod
 end
 
+target 'modularized_module_b_details' do
+  project 'modularized_module_b/modularized_module_b_details/modularized_module_b_details.project'
+  snapKitPod
+end
+
 target 'modularized_shared_module' do
   project 'modularized_shared_module/modularized_shared_module.project'
   snapKitPod
